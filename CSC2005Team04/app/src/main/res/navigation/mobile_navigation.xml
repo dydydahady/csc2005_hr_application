@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.csc2005_team04.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_leaves"
+        android:name="com.example.csc2005_team04.ui.leaves.LeavesFragment"
+        android:label="@string/menu_leaves"
+        tools:layout="@layout/fragment_leaves" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.csc2005_team04.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_claims"
+        android:name="com.example.csc2005_team04.ui.claims.ClaimsFragment"
+        android:label="@string/menu_claims"
+        tools:layout="@layout/fragment_claims" />
+
+    <fragment
+        android:id="@+id/nav_payslips"
+        android:name="com.example.csc2005_team04.ui.payslips.PayslipsFragment"
+        android:label="@string/menu_payslips"
+        tools:layout="@layout/fragment_claims" />
 </navigation>
