@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,4 +19,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleX="2"
+
+        android:scaleY="2"
+        android:text="LeavePage"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/LeaveInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/LeaveStat"
+        android:layout_centerInParent="true"
+        android:lineSpacingExtra="8sp"
+        android:layout_marginBottom="50dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Leave Information"
+        android:onClick="LeaveInfoOnClick"
+        app:backgroundTint="#F44336" />
+
+    <Button
+        android:id="@+id/LeaveStat"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="109dp"
+        android:layout_marginRight="109dp"
+        android:layout_marginBottom="50dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Leave Status"
+        android:onClick="LeaveStatOnClick"
+        app:backgroundTint="#F44336"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/LeaveApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@id/LeaveStat"
+        android:layout_centerInParent="true"
+        android:lineSpacingExtra="8sp"
+        android:lineSpacingMultiplier="0"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:layout_marginTop="20dp"
+        android:text="Leave Application"
+        android:onClick="LeaveAppOnClick"
+        app:backgroundTint="#F44336" />
+</RelativeLayout>
