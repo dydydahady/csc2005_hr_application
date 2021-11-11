@@ -25,6 +25,10 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.CSC2005Team04.NoActionBar">
         </activity>
+
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveInfoPage"></activity>
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationPage"></activity>
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus"></activity>
     </application>
 
 </manifest>

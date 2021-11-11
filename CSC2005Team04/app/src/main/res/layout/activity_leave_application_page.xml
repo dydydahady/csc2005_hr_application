@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ui.leaves.LeavesFragment">
+
+    <TextView
+        android:id="@+id/LeaveAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="20dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Leave Application Page"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <LinearLayout
+        android:layout_width="275dp"
+        android:layout_height="58dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#B5AAAA"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/LeaveAppTypeTitle"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text="Leave Type:"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinner1"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:entries="@array/leave_arrays"
+            android:prompt="@string/leave_prompt"
+            android:spinnerMode="dropdown" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/FromDateLayout"
+        android:layout_width="239dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"
+        android:background="#A89696"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/FromTitle"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text="From:"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDateFrom"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:text="Select a date"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/FromDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/FromDateLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:text="From Date"
+        android:textStyle="bold"/>
+
+    <LinearLayout
+        android:id="@+id/ToDateLayout"
+        android:layout_width="239dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="400dp"
+
+
+        android:background="#BFAAAA"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ToTitle"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:scaleX="1"
+            android:scaleY="1"
+            android:text="To:"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDateTo"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:padding="10dp"
+            android:text="Select a date"
+            android:textColor="@android:color/white" />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/ToDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ToDateLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:text="To Date"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/SubmitBtn"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="600dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:text="Submit"
+        android:textStyle="bold"
+        android:onClick="submitBtn"
+        app:backgroundTint="#F41111"
+        />
+
+
+</RelativeLayout>

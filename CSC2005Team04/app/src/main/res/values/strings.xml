@@ -13,4 +13,11 @@
     <!--    <string name="menu_slideshow">Slideshow</string>-->
     <string name="menu_claims">Claims</string>
     <string name="menu_payslips">Pay Slips</string>
+
+    <string name="leave_prompt">Choose type of leave</string>
+    <string-array name="leave_arrays">
+        <item>Annual Leave</item>
+        <item>Medical Leave</item>
+        <item>Emergency Leave</item>
+    </string-array>
 </resources>

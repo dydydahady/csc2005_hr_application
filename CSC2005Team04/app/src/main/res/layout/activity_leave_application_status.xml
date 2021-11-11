@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.leaves.LeavesFragment">
+
+    <TextView
+        android:id="@+id/LeaveStatTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="20dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Leave Application Status"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="110dp" />
+
+    <ListView
+        android:id="@+id/LVLeaves"
+        android:layout_width="324dp"
+        android:layout_height="568dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

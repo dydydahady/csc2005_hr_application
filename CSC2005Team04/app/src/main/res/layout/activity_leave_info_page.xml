@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDFCFC"
+    tools:context=".ui.leaves.LeavesFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="false"
+        android:layout_marginTop="90dp"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:text="Leave Information"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="331dp"
+        android:layout_height="549dp"
+        android:layout_centerInParent="true"
+        android:background="#C1B6B6"
+        android:gravity="center_vertical|center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/Annual_LeaveTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_vertical"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+
+
+            android:text="Annual Leave Taken"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Annual_Leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="4 days" />
+
+        <TextView
+            android:id="@+id/Emergency_Leave_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="Emergency Leave Remaining"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Emergency_Leave_Re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="10 days" />
+
+        <TextView
+            android:id="@+id/Medical_Leave_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="MCs Remaining:"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Medical_Leave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:text="13 days" />
+    </LinearLayout>
+
+
+</RelativeLayout>
