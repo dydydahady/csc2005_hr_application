@@ -51,17 +51,17 @@ public class LeaveMainPage extends AppCompatActivity {
     }
     public void openLeaveAppPage()
     {
-        Intent intent = new Intent(this,LeaveApplicationPage.class);
+        Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationPage.class);
         startActivity(intent);
     }
     public void openLeaveInfoPage()
     {
-        Intent intent = new Intent(this,LeaveInfoPage.class);
+        Intent intent = new Intent(this, com.example.csc2005_leave.LeaveInfoPage.class);
         startActivity(intent);
     }
     public void openLeaveStatPage()
     {
-        Intent intent = new Intent(this,LeaveApplicationStatus.class);
+        Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationStatus.class);
         startActivity(intent);
     }
 

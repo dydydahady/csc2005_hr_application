@@ -1,16 +1,16 @@
-package com.example.csc2005_team04.ui.leaves;
+package com.example.csc2005_leave;
 
-import static android.content.ContentValues.TAG;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
-import android.app.Fragment;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -18,12 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.csc2005_team04.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,7 +30,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LeaveApplicationPage extends Fragment {
+import static android.content.ContentValues.TAG;
+
+public class LeaveApplicationPage extends AppCompatActivity {
 
 
     Spinner spinner1;
@@ -51,29 +51,21 @@ public class LeaveApplicationPage extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.activity_leave_application_page,
-                container, false);
-
-
-        //setContentView(R.layout.activity_leave_application_page);
-        Button selectDateFrom = getView().findViewById(R.id.btnDateFrom);
-        TextView dateFrom = getView().findViewById(R.id.FromDate);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_leave_application_page);
+        Button selectDateFrom = findViewById(R.id.btnDateFrom);
+        TextView dateFrom = findViewById(R.id.FromDate);
 
 
-        Spinner spinner = getView().findViewById(R.id.spinner1);
+        Spinner spinner = findViewById(R.id.spinner1);
 
 
-        Button selectDateTo = getView().findViewById(R.id.btnDateTo);
-        TextView dateTo = getView().findViewById(R.id.ToDate);
+        Button selectDateTo = findViewById(R.id.btnDateTo);
+        TextView dateTo = findViewById(R.id.ToDate);
 
-        Button submitBtn = getView().findViewById(R.id.SubmitBtn);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-
-
+        Button submitBtn = findViewById(R.id.SubmitBtn);
+        builder = new AlertDialog.Builder(this);
 
         spinner.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
@@ -83,13 +75,9 @@ public class LeaveApplicationPage extends Fragment {
                         System.out.println(item.toString());     //prints the text in spinner item.
 
                     }
-
                     public void onNothingSelected(AdapterView<?> parent) {
                     }
-
                 });
-
-
 
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,13 +112,13 @@ public class LeaveApplicationPage extends Fragment {
                                 Map<String, Object> data = new HashMap<>();
                                 data.put("LeaveType", LeaveType);
                                 data.put("StartDate", FromDate);
-                                data.put("EndDate", ToDate);
-                                data.put("Approver:", "manager0");
+                                data.put("EndDate",ToDate);
+                                data.put("Approver:","manager0");
                                 //Long tsLong = System.currentTimeMillis()/1000;
                                 //String ts = tsLong.toString();
 
                                 data.put("DateApplied", FieldValue.serverTimestamp());
-                                data.put("EmployeeID", "user1");
+                                data.put("EmployeeID","user1");
                                 FirebaseFirestore db = FirebaseFirestore.getInstance();
 
                                 db.collection("leaves")
@@ -149,8 +137,9 @@ public class LeaveApplicationPage extends Fragment {
                                         });
 
 
+
                                 //finish();
-                                Toast.makeText(getActivity(), "Leave Applied",
+                                Toast.makeText(getApplicationContext(),"Leave Applied",
                                         Toast.LENGTH_LONG).show();
 
                                 System.out.println("Bruh where is my toast message??");
@@ -161,7 +150,7 @@ public class LeaveApplicationPage extends Fragment {
                             public void onClick(DialogInterface dialog, int id) {
                                 //  Action for 'NO' Button
                                 dialog.cancel();
-                                Toast.makeText(getActivity(), "Cancelled",
+                                Toast.makeText(getApplicationContext(),"Cancelled",
                                         Toast.LENGTH_SHORT).show();
 
 
@@ -174,11 +163,7 @@ public class LeaveApplicationPage extends Fragment {
                 alert.show();
 
             }
-
         });
-
-
-
 
 
 
@@ -192,12 +177,11 @@ public class LeaveApplicationPage extends Fragment {
         selectDateFrom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 calendar = Calendar.getInstance();
                 year = calendar.get(Calendar.YEAR);
                 month = calendar.get(Calendar.MONTH);
                 dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-                datePickerDialog = new DatePickerDialog(getActivity(),
+                datePickerDialog = new DatePickerDialog(LeaveApplicationPage.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -210,7 +194,6 @@ public class LeaveApplicationPage extends Fragment {
             }
 
 
-
         });
 
         selectDateTo.setOnClickListener(new View.OnClickListener() {
@@ -220,7 +203,7 @@ public class LeaveApplicationPage extends Fragment {
                 year = calendar.get(Calendar.YEAR);
                 month = calendar.get(Calendar.MONTH);
                 dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
-                datePickerDialog = new DatePickerDialog(getActivity(),
+                datePickerDialog = new DatePickerDialog(LeaveApplicationPage.this,
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -232,9 +215,8 @@ public class LeaveApplicationPage extends Fragment {
             }
         });
 
-        return view;
-    }
 
+    }
 }
 
 

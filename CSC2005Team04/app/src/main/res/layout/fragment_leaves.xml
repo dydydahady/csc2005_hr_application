@@ -46,7 +46,7 @@
         android:scaleX="2"
         android:scaleY="2"
         android:text="Leave Information"
-        android:onClick="LeaveInfoOnClick"
+
         app:backgroundTint="#F44336" />
 
     <Button
@@ -61,7 +61,7 @@
         android:scaleX="2"
         android:scaleY="2"
         android:text="Leave Status"
-        android:onClick="LeaveStatOnClick"
+
         app:backgroundTint="#F44336"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -78,6 +78,6 @@
         android:scaleY="2"
         android:layout_marginTop="20dp"
         android:text="Leave Application"
-        android:onClick="LeaveAppOnClick"
+
         app:backgroundTint="#F44336" />
 </RelativeLayout>

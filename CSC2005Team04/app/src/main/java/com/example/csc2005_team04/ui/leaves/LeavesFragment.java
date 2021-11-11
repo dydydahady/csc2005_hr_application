@@ -1,24 +1,18 @@
 package com.example.csc2005_team04.ui.leaves;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.csc2005_team04.R;
 import com.example.csc2005_team04.databinding.FragmentLeavesBinding;
 
-public class LeavesFragment extends Fragment implements View.OnClickListener {
+public class LeavesFragment extends Fragment {
 
     private LeavesViewModel leavesViewModel;
     private FragmentLeavesBinding binding;
@@ -51,16 +45,40 @@ public class LeavesFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_leaves,
                 container, false);
 
+        Button button = (Button) view.findViewById(R.id.LeaveInfo);
+        Button button1 = (Button) view.findViewById(R.id.LeaveStat);
+        Button button2 = (Button) view.findViewById(R.id.LeaveApp);
+
+        button.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                // do something
+                openLeaveInfoPage();
+            }
+
+        });
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLeaveStatPage();
+            }
+        });
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLeaveAppPage();
+            }
+        });
+
+
+
 
 
         return view;
     }
-    @Override
-    public void onClick(View v)
-    {
-        openLeaveInfoPage();
 
-    }
 
 
 
@@ -104,17 +122,18 @@ public class LeavesFragment extends Fragment implements View.OnClickListener {
     public void openLeaveAppPage()
     {
 
-        Intent intent = new Intent(getActivity(), LeaveApplicationPage.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveApplicationPage.class);
         startActivity(intent);
     }
     public void openLeaveInfoPage()
     {
-        Intent intent = new Intent(getActivity(), LeaveInfoPage.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveInfoPage.class);
+
         startActivity(intent);
     }
     public void openLeaveStatPage()
     {
-        Intent intent = new Intent(getActivity(), LeaveApplicationStatus.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveApplicationStatus.class);
         startActivity(intent);
     }
 
