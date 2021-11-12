@@ -14,21 +14,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSC2005Team04">
         <activity
+            android:name=".LoginActivity"
+            android:exported="true" >
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.CSC2005Team04.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name="com.example.csc2005_leave.LeaveInfoPage"
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveInfoPage"
             tools:ignore="MissingClass"></activity>
-        <activity android:name="com.example.csc2005_leave.LeaveApplicationPage"
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationPage"
             tools:ignore="MissingClass"></activity>
-        <activity android:name="com.example.csc2005_leave.LeaveApplicationStatus"
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus"
             tools:ignore="MissingClass"></activity>
 
     </application>

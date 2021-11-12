@@ -122,18 +122,18 @@ public class LeavesFragment extends Fragment {
     public void openLeaveAppPage()
     {
 
-        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveApplicationPage.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_team04.ui.leaves.LeaveApplicationPage.class);
         startActivity(intent);
     }
     public void openLeaveInfoPage()
     {
-        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveInfoPage.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_team04.ui.leaves.LeaveInfoPage.class);
 
         startActivity(intent);
     }
     public void openLeaveStatPage()
     {
-        Intent intent = new Intent(getActivity(), com.example.csc2005_leave.LeaveApplicationStatus.class);
+        Intent intent = new Intent(getActivity(), com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus.class);
         startActivity(intent);
     }
 

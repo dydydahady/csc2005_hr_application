@@ -17,6 +17,7 @@ public class LeaveMainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_leaves);
     }
+    /*
     public void LeaveAppOnClick(View v)
     {
         Button button = (Button) findViewById(R.id.LeaveApp);
@@ -49,6 +50,7 @@ public class LeaveMainPage extends AppCompatActivity {
         });
 
     }
+
     public void openLeaveAppPage()
     {
         Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationPage.class);
@@ -64,7 +66,7 @@ public class LeaveMainPage extends AppCompatActivity {
         Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationStatus.class);
         startActivity(intent);
     }
-
+    */
 
 
 }

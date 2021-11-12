@@ -1,4 +1,4 @@
-package com.example.csc2005_leave;
+package com.example.csc2005_team04.ui.leaves;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
