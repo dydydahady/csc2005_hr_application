@@ -21,7 +21,7 @@
                 android:layout_height="77dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="93dp"
-                android:src="@drawable/logo"/>
+                android:src="@drawable/hrdesk_logo_white"/>
 
         </FrameLayout>
 

@@ -12,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.csc2005_team04.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -27,12 +25,6 @@ public class LeaveInfoPage extends AppCompatActivity {
 
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            // Name, email address, and profile photo Url
-            String email = user.getEmail();
-            Log.i("EMAIL: ", email);
-        }
 
         db.collection("users")
                 .get()
@@ -44,8 +36,7 @@ public class LeaveInfoPage extends AppCompatActivity {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 System.out.println("OnComplete, task.is.Succuessful");
                                 System.out.println(document.getId());
-//                                if(document.getId().equals("user1"))
-                                if(document.getId().equals(user.getEmail().replaceAll("@.*","").trim()))
+                                if(document.getId().equals("user1"))
 
                                 {
                                     System.out.print("Setting user1 Leave Info retrieval worked");

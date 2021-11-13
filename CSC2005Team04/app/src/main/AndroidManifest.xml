@@ -29,6 +29,29 @@
         <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveInfoPage"></activity>
         <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationPage"></activity>
         <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus"></activity>
+
+        <activity android:name="com.example.csc2005_team04.forgotPassword"></activity>
+
+        <activity
+            android:name="com.example.csc2005_team04.ui.payslips.PreviousPayslips"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.payslips.LatestPayslip"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplicationStatus"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplicationDone"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplication"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

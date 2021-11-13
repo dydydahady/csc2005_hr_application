@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,13 +92,15 @@ public class MainActivity extends AppCompatActivity {
                     // Document found in the offline cache
                     DocumentSnapshot document = task.getResult();
                     Log.d("LOG", "Cached document data: " + document.getData());
-                    String username = document.getData().get("Name").toString();
+                    username = document.getData().get("Name").toString();
                     navUsername.setText(username);
                 } else {
                     Log.d("LOG", "Cached get failed: ", task.getException());
                 }
             }
         });
+
+        Log.d("LOG", "Cached document data: " + username);
     }
 
     @Override

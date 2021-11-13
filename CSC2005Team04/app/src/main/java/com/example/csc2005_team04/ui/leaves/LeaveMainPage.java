@@ -1,9 +1,6 @@
 package com.example.csc2005_team04.ui.leaves;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +14,7 @@ public class LeaveMainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_leaves);
     }
+    /*
     public void LeaveAppOnClick(View v)
     {
         Button button = (Button) findViewById(R.id.LeaveApp);
@@ -49,22 +47,23 @@ public class LeaveMainPage extends AppCompatActivity {
         });
 
     }
+
     public void openLeaveAppPage()
     {
-        Intent intent = new Intent(this,com.example.csc2005_team04.ui.leaves.LeaveApplicationPage.class);
+        Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationPage.class);
         startActivity(intent);
     }
     public void openLeaveInfoPage()
     {
-        Intent intent = new Intent(this, com.example.csc2005_team04.ui.leaves.LeaveInfoPage.class);
+        Intent intent = new Intent(this, com.example.csc2005_leave.LeaveInfoPage.class);
         startActivity(intent);
     }
     public void openLeaveStatPage()
     {
-        Intent intent = new Intent(this,com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus.class);
+        Intent intent = new Intent(this,com.example.csc2005_leave.LeaveApplicationStatus.class);
         startActivity(intent);
     }
-
+    */
 
 
 }
