@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.csc2005_team04.R;
@@ -33,13 +34,15 @@ public class LeavesAdapter extends ArrayAdapter<Leaves> {
         Leaves leaves = getItem(position);
         System.out.println("GetItem: "+getItem(position));
 
-        tvLeaveType.setText(leaves.getStartdate());
-        tvFromDate.setText(leaves.getEnddate());
-        tvToDate.setText(leaves.getLeavetype());
+        tvLeaveType.setText(leaves.getStartDate());
+        tvFromDate.setText(leaves.getEndDate());
+        tvToDate.setText(leaves.getLeaveType());
 
-        System.out.println("GetStartDate: "+leaves.getStartdate());
-        System.out.println("GetEndDate: "+leaves.getEnddate());
-        System.out.println("GetLeaveType: "+leaves.getLeavetype());
+        System.out.println("GetStartDate: "+leaves.getStartDate());
+        System.out.println("GetEndDate: "+leaves.getEndDate());
+        System.out.println("GetLeaveType: "+leaves.getLeaveType());
+
+
 
 
 

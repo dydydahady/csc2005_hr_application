@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         android:scaleX="2"
         android:scaleY="2"
-
+        android:layout_weight="1"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="183dp"
         tools:layout_editor_absoluteY="110dp" />
@@ -30,7 +30,8 @@
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="Leave Type"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/LeaveType"
@@ -38,10 +39,9 @@
         android:layout_height="wrap_content"
 
 
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="200dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="100dp"
+        android:layout_weight="1"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="TextView" />
@@ -56,20 +56,21 @@
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="From Date"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/FromDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="150dp"
+        android:layout_weight="1"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="TextView" />
+
     <TextView
         android:id="@+id/ToDateTitle"
         android:layout_width="wrap_content"
@@ -78,20 +79,19 @@
         android:layout_marginStart="50dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="200dp"
+        android:layout_weight="1"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="To Date"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/ToDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:layout_alignParentRight="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
+
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="200dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
@@ -102,23 +102,24 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="false"
         android:layout_marginStart="50dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="300dp"
         android:layout_marginTop="250dp"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="Leave Status"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:layout_weight="1"/>
 
     <TextView
         android:id="@+id/LeaveStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-
         android:layout_alignParentRight="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="300dp"
+
+
+        android:layout_marginLeft="250dp"
         android:layout_marginTop="250dp"
+        android:layout_weight="1"
         android:scaleX="1.5"
         android:scaleY="1.5"
         android:text="Pending" />
