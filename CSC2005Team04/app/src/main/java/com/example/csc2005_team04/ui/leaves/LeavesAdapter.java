@@ -31,13 +31,15 @@ public class LeavesAdapter extends ArrayAdapter<Leaves> {
         Leaves leaves = getItem(position);
         System.out.println("GetItem: "+getItem(position));
 
-        tvLeaveType.setText(leaves.getStartdate());
-        tvFromDate.setText(leaves.getEnddate());
-        tvToDate.setText(leaves.getLeavetype());
+        tvLeaveType.setText(leaves.getStartDate());
+        tvFromDate.setText(leaves.getEndDate());
+        tvToDate.setText(leaves.getLeaveType());
 
-        System.out.println("GetStartDate: "+leaves.getStartdate());
-        System.out.println("GetEndDate: "+leaves.getEnddate());
-        System.out.println("GetLeaveType: "+leaves.getLeavetype());
+        System.out.println("GetStartDate: "+leaves.getStartDate());
+        System.out.println("GetEndDate: "+leaves.getEndDate());
+        System.out.println("GetLeaveType: "+leaves.getLeaveType());
+
+
 
 
 

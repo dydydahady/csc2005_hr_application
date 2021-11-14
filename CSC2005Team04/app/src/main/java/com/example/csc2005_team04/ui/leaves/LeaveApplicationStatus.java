@@ -30,6 +30,9 @@ public class LeaveApplicationStatus extends AppCompatActivity {
     ListView mLeavesListView;
 
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +50,9 @@ public class LeaveApplicationStatus extends AppCompatActivity {
         mLeavesListView.setAdapter(mLeaveAdapter);
 
 
+
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
         db.collection("leaves")
                 .whereEqualTo("EmployeeID", "user1")
@@ -56,26 +61,57 @@ public class LeaveApplicationStatus extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         List<Leaves> arrayList = new ArrayList<>();
-                        if (task.isSuccessful())
-                        {
-                            for (QueryDocumentSnapshot document : task.getResult())
-                            {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d(TAG, document.getId() + " => " + document.getData());
                                 System.out.println("OnComplete, task.is.Succuessful");
 
+
                                 Leaves leave = document.toObject(Leaves.class);
+
+                                TextView TVLeaveType = findViewById(R.id.LeaveType);
+
+
                                 arrayList.add(leave);
 
+
                             }
+
                             ListView mLeavesView = (ListView) findViewById(R.id.LeaveListView);
                             LeavesAdapter mLeavesAdapter = new LeavesAdapter(LeaveApplicationStatus.this, arrayList);
 
+
                             mLeavesView.setAdapter(mLeavesAdapter);
                             System.out.println(arrayList);
-                            }
+
+                        }else
+                            {
+                                Log.d("MissionActivity", "Error getting documents: ", task.getException());
 
                     }
+
+
+
+
+
+                    }
+
+
                 });
+
+
+
+
+
+
+
+
+
+
+
+
+
         System.out.println("Does this work?");
     }
+
 }

@@ -41,13 +41,13 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/LeaveStat"
         android:layout_centerInParent="true"
-        android:lineSpacingExtra="8sp"
         android:layout_marginBottom="50dp"
+        android:lineSpacingExtra="8sp"
         android:scaleX="2"
+
         android:scaleY="2"
         android:text="Leave Information"
-
-        app:backgroundTint="#F44336" />
+        app:backgroundTint="@color/teal_700" />
 
     <Button
         android:id="@+id/LeaveStat"
@@ -62,7 +62,7 @@
         android:scaleY="2"
         android:text="Leave Status"
 
-        app:backgroundTint="#F44336"
+        app:backgroundTint="@color/teal_700"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
@@ -72,12 +72,12 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_below="@id/LeaveStat"
         android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:lineSpacingExtra="8sp"
         android:lineSpacingMultiplier="0"
         android:scaleX="2"
         android:scaleY="2"
-        android:layout_marginTop="20dp"
-        android:text="Leave Application"
 
-        app:backgroundTint="#F44336" />
+        android:text="Leave Application"
+        app:backgroundTint="@color/teal_700" />
 </RelativeLayout>
