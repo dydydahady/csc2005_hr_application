@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +21,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -27,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
+    private String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -43,8 +51,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String email = user.getEmail();
+            Log.i("EMAIL: ", email);
+        }
+//        String username = user.getEmail().replaceAll("@.*","").trim();
+//        Log.d("LOG", "username: " + username);
+//        FirebaseFirestore db = FirebaseFirestore.getInstance();
+//        DocumentReference docRef = db.collection("users").document(username);
+//        Log.d("LOG", "name: " + docRef.getId();
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.EmailtextView);
+//        navUsername.setText(user.getEmail());
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -56,7 +78,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        DocumentReference docRef = db.collection("users").document("user1");
+//        DocumentReference docRef = db.collection("users").document("user1");
+        DocumentReference docRef = db.collection("users").document(user.getEmail().replaceAll("@.*","").trim());
 
         // Source can be CACHE, SERVER, or DEFAULT.
         Source source = Source.SERVER;
@@ -69,11 +92,15 @@ public class MainActivity extends AppCompatActivity {
                     // Document found in the offline cache
                     DocumentSnapshot document = task.getResult();
                     Log.d("LOG", "Cached document data: " + document.getData());
+                    username = document.getData().get("Name").toString();
+                    navUsername.setText(username);
                 } else {
                     Log.d("LOG", "Cached get failed: ", task.getException());
                 }
             }
         });
+
+        Log.d("LOG", "Cached document data: " + username);
     }
 
     @Override

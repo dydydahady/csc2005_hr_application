@@ -4,7 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
@@ -14,10 +17,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.csc2005_team04.ui.claims.ClaimApplication;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     private FirebaseAuth mAuth;
@@ -96,8 +101,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if(task.isSuccessful()){
                     //redirect to main dashboard page
                     Toast.makeText(LoginActivity.this, "Successful login", Toast.LENGTH_LONG).show();
+
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+
                 }
                 else{
                     count++;
@@ -114,5 +121,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void login(View view) {
         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         startActivity(intent);
+
     }
 }

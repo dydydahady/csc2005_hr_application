@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.csc2005_team04"
-    >
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    package="com.example.csc2005_team04">
 
     <application
         android:allowBackup="true"
@@ -29,13 +25,33 @@
             android:label="@string/app_name"
             android:theme="@style/Theme.CSC2005Team04.NoActionBar">
         </activity>
-        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveInfoPage"
-            tools:ignore="MissingClass"></activity>
-        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationPage"
-            tools:ignore="MissingClass"></activity>
-        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus"
-            tools:ignore="MissingClass"></activity>
 
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveInfoPage"></activity>
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationPage"></activity>
+        <activity android:name="com.example.csc2005_team04.ui.leaves.LeaveApplicationStatus"></activity>
+
+        <activity android:name="com.example.csc2005_team04.forgotPassword"></activity>
+
+        <activity
+            android:name="com.example.csc2005_team04.ui.payslips.PreviousPayslips"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.payslips.LatestPayslip"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplicationStatus"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplicationDone"
+            android:exported="false" />
+        <activity
+            android:name="com.example.csc2005_team04.ui.claims.ClaimApplication"
+            android:exported="false"
+            android:windowSoftInputMode="adjustNothing" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

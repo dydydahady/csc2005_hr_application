@@ -2,17 +2,14 @@ package com.example.csc2005_team04.ui.leaves;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.csc2005_team04.R;
 
 import java.util.List;
-
 
 
 public class LeavesAdapter extends ArrayAdapter<Leaves> {
@@ -37,13 +34,11 @@ public class LeavesAdapter extends ArrayAdapter<Leaves> {
         tvLeaveType.setText(leaves.getStartDate());
         tvFromDate.setText(leaves.getEndDate());
         tvToDate.setText(leaves.getLeaveType());
-
-        System.out.println("GetStartDate: "+leaves.getStartDate());
-        System.out.println("GetEndDate: "+leaves.getEndDate());
-        System.out.println("GetLeaveType: "+leaves.getLeaveType());
-
-
-
+        /*
+        System.out.println("GetStartDate: "+leaves.getStartdate());
+        System.out.println("GetEndDate: "+leaves.getEnddate());
+        System.out.println("GetLeaveType: "+leaves.getLeavetype());
+        */
 
 
         return convertView;

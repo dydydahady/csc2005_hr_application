@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.csc2005_team04"
-        minSdk 23
+        minSdk 26
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -41,10 +41,12 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.3.5'
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'com.google.firebase:firebase-database:19.7.0'
+    implementation 'com.google.firebase:firebase-storage:20.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation platform('com.google.firebase:firebase-bom:28.4.2')
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.firebase:firebase-auth'
+    implementation 'es.voghdev.pdfviewpager:library:1.1.2'
 }
