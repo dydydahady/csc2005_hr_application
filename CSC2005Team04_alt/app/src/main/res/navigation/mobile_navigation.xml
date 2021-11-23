@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_payslips"
-        android:name="com.example.csc2005_team04_alt.ui.notifications.NotificationsFragment"
+        android:name="com.example.csc2005_team04_alt.ui.payslips.PayslipsFragment"
         android:label="@string/title_payslips"
         tools:layout="@layout/fragment_payslips" />
 </navigation>
